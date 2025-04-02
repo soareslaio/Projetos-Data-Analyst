@@ -1,0 +1,108 @@
+table Calendario
+	lineageTag: 2110d08f-0248-4e11-8183-4c23b5fcee71
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Short Date
+		lineageTag: b3b7d9f8-4926-4481-b46b-b80b92bc5b67
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ano
+		formatString: 0
+		lineageTag: 564e00bc-9183-432d-93d5-3c6e35e6f28b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Ano]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		lineageTag: b12db4fd-f235-4e24-834a-cdb4492fc2e4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Mes]
+		sortByColumn: MesNumero
+
+		annotation SummarizationSetBy = Automatic
+
+	column MesNumero
+		formatString: 0
+		lineageTag: 3caab3aa-6397-4cee-ab20-1b56c3f9a2a9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MesNumero]
+
+		annotation SummarizationSetBy = User
+
+	column AnoMes
+		lineageTag: 24c24dbb-da8e-46aa-8411-22680598b083
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AnoMes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Trimestre
+		lineageTag: 399f02ab-d177-44b8-b210-58c704bb930e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Trimestre]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia da Semana'
+		lineageTag: 8a760308-fbc8-4f56-96b1-7a8c0f75384b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dia da Semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero do Dia da Semana'
+		formatString: 0
+		lineageTag: f6bfea1e-093b-4082-b7e9-d41b327fe524
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Numero do Dia da Semana]
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Ano Hierarchy'
+		lineageTag: 48b83deb-e514-44dc-9832-f8013a74ebc3
+
+		level Ano
+			lineageTag: 3fc7ecf8-f371-424a-92ee-982f1a2bd4ff
+			column: Ano
+
+		level Mes
+			lineageTag: ce039da5-ddf3-49bd-b160-9b292636e2ff
+			column: Mes
+
+		level 'Dia da Semana'
+			lineageTag: 0043f5a6-d7a1-46a6-b5b6-3799e0d4c644
+			column: 'Dia da Semana'
+
+	partition Calendario = calculated
+		mode: import
+		source = ```
+				
+				ADDCOLUMNS (
+				    CALENDAR (DATE(2024, 1, 1), DATE(2024, 12, 31)), -- Periodo de corte do dataset
+				    "Ano", YEAR([Date]),
+				    "Mes", FORMAT([Date], "[$-pt-BR]MMMM"),
+				    "MesNumero", MONTH([Date]),
+				    "AnoMes", FORMAT([Date], "YYYY-MM"),
+				    "Trimestre", "Q" & FORMAT([Date], "Q"),
+				    "Dia da Semana", FORMAT([Date], "dddd"),
+				    "Numero do Dia da Semana", WEEKDAY([Date])
+				)
+				
+				```
+
+	annotation PBI_Id = 064d2476dc5e429ba42b52292935f9f1
+

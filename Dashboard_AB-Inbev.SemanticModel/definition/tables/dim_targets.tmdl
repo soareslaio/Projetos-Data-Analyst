@@ -1,0 +1,40 @@
+table dim_targets
+	lineageTag: 5d3f30b8-13c6-4e00-9f47-c3151a301da1
+
+	column user_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 14e05126-ebff-47ee-ab9e-94f23bb09d05
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column monthly_revenue_target
+		dataType: int64
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 151169fe-fe79-4a42-bad1-a19d38268395
+		summarizeBy: none
+		sourceColumn: monthly_revenue_target
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition dim_targets = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\targets.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"user_id", Int64.Type}, {"category", type text}, {"city", type text}, {"monthly revenue target", Int64.Type}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"user_id", "monthly revenue target"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Other Columns",{{"monthly revenue target", "monthly_revenue_target"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

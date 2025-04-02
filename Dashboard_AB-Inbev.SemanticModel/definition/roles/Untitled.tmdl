@@ -1,0 +1,7 @@
+role Untitled
+	modelPermission: read
+
+	tablePermission dim_rls = [user_id] == 75361105
+
+	annotation PBI_Id = f739349ff1054797b7a515d42d733380
+

@@ -1,0 +1,99 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 618.43744681883777,
+            "y": 235.17225467344633
+          },
+          "nodeIndex": "dim_targets",
+          "nodeLineageTag": "5d3f30b8-13c6-4e00-9f47-c3151a301da1",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 334.2049297157572,
+            "y": 213.42608253218941
+          },
+          "nodeIndex": "fact_order",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 334.2448461215871,
+            "y": -50
+          },
+          "nodeIndex": "dim_items",
+          "nodeLineageTag": "31b23040-c7f9-42e8-99e8-570b80d405dc",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 50.028857012777962,
+            "y": 492.16862792058589
+          },
+          "nodeIndex": "dim_users",
+          "nodeLineageTag": "938331d7-e12a-4b05-a386-9663d7b50e1b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 98.4990119500095
+          },
+          "nodeIndex": "dim_rls",
+          "nodeLineageTag": "14c789c2-ed36-41e4-8c3c-09627b03599f",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 484.09438941789517,
+            "y": 511.63689627562781
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "2110d08f-0248-4e11-8183-4c23b5fcee71",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 5
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 52.375822115714421,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,20 @@
+relationship 36252795-7940-f85e-85b6-402c5cf311a1
+	fromColumn: fact_order.user_id
+	toColumn: dim_users.user_id
+
+relationship 1cf95ae1-d071-5a11-25ed-ee564469194b
+	fromColumn: fact_order.product_id
+	toColumn: dim_items.item_id
+
+relationship 250bd8c9-4461-85d5-7bc2-c800e7cc9b25
+	fromColumn: fact_order.user_id
+	toColumn: dim_targets.user_id
+
+relationship 217db9b1-b9e5-1b5d-d7b9-b8a4490d59f4
+	fromColumn: fact_order.user_id
+	toColumn: dim_rls.user_id
+
+relationship 8f32c4ff-1052-42d8-1a6d-11b75ec28cfb
+	fromColumn: fact_order.order_date
+	toColumn: Calendario.Date
+

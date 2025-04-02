@@ -1,0 +1,36 @@
+table dim_rls
+	lineageTag: 14c789c2-ed36-41e4-8c3c-09627b03599f
+
+	column user_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 6a8236f3-4159-4eb8-9bc5-0e9b891e181f
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = User
+
+	column city
+		dataType: string
+		lineageTag: cc7f8458-fc67-4111-b844-630545760c19
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_rls = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\users.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"user_id", Int64.Type}, {"city", type text}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"user_id", "city"})
+				in
+				    #"Removed Other Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

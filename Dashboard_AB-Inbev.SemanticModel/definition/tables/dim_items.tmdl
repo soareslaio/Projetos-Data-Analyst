@@ -1,0 +1,35 @@
+table dim_items
+	lineageTag: 31b23040-c7f9-42e8-99e8-570b80d405dc
+
+	column item_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c36e0981-1856-4760-a163-a11fbdb34acf
+		summarizeBy: none
+		sourceColumn: item_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: dd8023d5-c2fa-4a03-aff9-1f67226b93d6
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_items = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\items.xlsx"), null, true),
+				    items_Sheet = Source{[Item="items",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(items_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"item_id", Int64.Type}, {"category", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

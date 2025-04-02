@@ -1,0 +1,137 @@
+table fact_order
+	lineageTag: b1bdbf33-32d4-4850-b384-16d92c5b26cd
+
+	measure GMV = ```
+			SUM(fact_order[revenue])
+			
+			```
+		displayFolder: Metricas Fact Order
+		lineageTag: d56af0db-7439-46a8-8557-401d21067227
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MetaSeller =
+			
+			
+			VAR MetaTotal = SUM(dim_targets[monthly_revenue_target])
+			
+			RETURN MetaTotal
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: 0f4be534-7981-46e8-9fc7-57b22263bd33
+
+	measure OrdersQuantity =
+			
+			
+			VAR TotalOrders = DISTINCTCOUNT(fact_order[order_date])
+			
+			RETURN TotalOrders
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: 1e8f4285-ab27-474c-bcbd-8fd8f7d3e4f5
+
+	measure DistinctProducts =
+			
+			
+			VAR ProductsQuantity = DISTINCTCOUNT(fact_order[product_id])
+			
+			RETURN ProductsQuantity
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: 4223eea6-8137-4af0-bed4-8404311a3671
+
+	measure AvgRevenue = ```
+			
+			
+			VAR AverageTicket = AVERAGE(fact_order[revenue])
+			
+			RETURN AverageTicket
+			
+			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Metricas Fact Order
+		lineageTag: c2cad9a2-fe02-4025-a751-a3f13dd4dae6
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure MedianRevenue =
+			
+			
+			VAR MedianTicket = MEDIAN(fact_order[revenue])
+			
+			RETURN MedianTicket
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		displayFolder: Metricas Fact Order
+		lineageTag: 7e03caca-72fb-434a-91c1-13ce4522d294
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure NewGoal = 50000000
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: 627f151b-a7db-469f-9c36-ab7e675ef867
+
+	column order_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b81fa551-3fd3-4d19-a4c3-2296fa44723b
+		summarizeBy: none
+		sourceColumn: order_id
+
+		annotation SummarizationSetBy = User
+
+	column order_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 68e9519a-3460-4267-9ae8-a705469c8217
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column user_id
+		dataType: int64
+		formatString: 0
+		lineageTag: a15824ce-684c-4739-8e85-4e17f2262d55
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 12993a0b-7c22-42a2-b760-7fb45171ed21
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 75df3abb-6431-4557-a07c-7c991bedc64c
+		summarizeBy: none
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition fact_order = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\orders.xlsx"), null, true),
+				    orders_Sheet = Source{[Item="orders",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(orders_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", Int64.Type}, {"order_date", type date}, {"user_id", Int64.Type}, {"product_id", Int64.Type}, {"revenue", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

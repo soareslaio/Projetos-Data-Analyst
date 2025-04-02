@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Dashboard_AB-Inbev"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f4f42bbf-5624-4a30-9fa6-8a4d984126dc"
+  }
+}
