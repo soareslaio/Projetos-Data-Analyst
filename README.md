@@ -1,5 +1,6 @@
 ## Objetivo do Projeto
-# Construir relatório em powerBI que mostre as minhas habilidades em transformar dados em insights significativos. 
+
+Construir relatório em powerBI que mostre as minhas habilidades em transformar dados em insights significativos. 
 
 # Tecnologias usadas no projeto
 
