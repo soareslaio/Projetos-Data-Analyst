@@ -22,7 +22,7 @@ table dim_rls
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\users.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\PowerBI\users.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"user_id", Int64.Type}, {"city", type text}}),

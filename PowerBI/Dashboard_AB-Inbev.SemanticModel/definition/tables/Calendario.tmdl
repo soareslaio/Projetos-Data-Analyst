@@ -39,22 +39,6 @@ table Calendario
 
 		annotation SummarizationSetBy = User
 
-	column AnoMes
-		lineageTag: 24c24dbb-da8e-46aa-8411-22680598b083
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [AnoMes]
-
-		annotation SummarizationSetBy = Automatic
-
-	column Trimestre
-		lineageTag: 399f02ab-d177-44b8-b210-58c704bb930e
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: [Trimestre]
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Dia da Semana'
 		lineageTag: 8a760308-fbc8-4f56-96b1-7a8c0f75384b
 		summarizeBy: none
@@ -100,8 +84,6 @@ table Calendario
 				    "Ano", YEAR([Date]),
 				    "Mes", FORMAT([Date], "[$-pt-BR]MMMM"),
 				    "MesNumero", MONTH([Date]),
-				    "AnoMes", FORMAT([Date], "YYYY-MM"),
-				    "Trimestre", "Q" & FORMAT([Date], "Q"),
 				    "Dia da Semana", FORMAT([Date], "dddd"),
 				    "Numero do Dia da Semana", WEEKDAY([Date])
 				)

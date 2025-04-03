@@ -24,7 +24,7 @@ table fact_order
 	measure OrdersQuantity =
 			
 			
-			VAR TotalOrders = DISTINCTCOUNT(fact_order[order_date])
+			VAR TotalOrders = DISTINCTCOUNT(fact_order[order_id])
 			
 			RETURN TotalOrders
 		formatString: 0
@@ -154,7 +154,7 @@ table fact_order
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\orders.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\PowerBI\orders.xlsx"), null, true),
 				    orders_Sheet = Source{[Item="orders",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(orders_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", Int64.Type}, {"order_date", type date}, {"user_id", Int64.Type}, {"product_id", Int64.Type}, {"revenue", type number}})
