@@ -25,9 +25,13 @@ table dim_items
 				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\items.xlsx"), null, true),
 				    items_Sheet = Source{[Item="items",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(items_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"item_id", Int64.Type}, {"category", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"item_id", Int64.Type}, {"category", type text}}),
+				    pattern_beer_Beer = Table.ReplaceValue(#"Changed Type","beer","Beer",Replacer.ReplaceText,{"category"}),
+				    pattern_nab_Nab = Table.ReplaceValue(pattern_beer_Beer,"nab","Nab",Replacer.ReplaceText,{"category"}),
+				    pattern_soda_Soda = Table.ReplaceValue(pattern_nab_Nab,"soda","Soda",Replacer.ReplaceText,{"category"}),
+				    pattern_liquor_Liquor = Table.ReplaceValue(pattern_soda_Soda,"liquor","Liquor",Replacer.ReplaceText,{"category"})
 				in
-				    #"Changed Type"
+				    pattern_liquor_Liquor
 
 	annotation PBI_NavigationStepName = Navigation
 

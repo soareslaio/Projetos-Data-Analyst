@@ -5,10 +5,11 @@ table fact_order
 			SUM(fact_order[revenue])
 			
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Metricas Fact Order
 		lineageTag: d56af0db-7439-46a8-8557-401d21067227
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure MetaSeller =
 			
@@ -66,10 +67,39 @@ table fact_order
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure NewGoal = 50000000
+	measure UsuariosDistintos =
+			
+			
+			VAR UsersOrders = DISTINCTCOUNT(fact_order[user_id])
+			
+			RETURN UsersOrders
 		formatString: 0
 		displayFolder: Metricas Fact Order
-		lineageTag: 627f151b-a7db-469f-9c36-ab7e675ef867
+		lineageTag: c04fcc1d-b1af-4594-af90-389bd45af23c
+
+	measure MediaUsuariosDistintos =
+			
+			DIVIDE([GMV],[UsuariosDistintos],0)
+		displayFolder: Metricas Fact Order
+		lineageTag: d24860d3-2ac8-44c4-a0b2-7a636e83508f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MedianaUsuarios = ```
+			
+			VAR TabelaUsuarios = 
+			    SUMMARIZE(
+			        fact_order,
+			        fact_order[user_id],
+			        "VendasUsuario", SUM(fact_order[revenue]) 
+			    )
+			RETURN 
+			    MEDIANX(TabelaUsuarios, [VendasUsuario])
+			```
+		displayFolder: Metricas Fact Order
+		lineageTag: a7c23406-7b00-41b5-8fc5-8b3e76048961
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column order_id
 		dataType: int64

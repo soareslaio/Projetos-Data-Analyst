@@ -83,6 +83,10 @@ table Calendario
 			lineageTag: ce039da5-ddf3-49bd-b160-9b292636e2ff
 			column: Mes
 
+		level 'Numero do Dia da Semana'
+			lineageTag: 193053ef-acf9-4c7c-be47-053ca8b2a498
+			column: 'Numero do Dia da Semana'
+
 		level 'Dia da Semana'
 			lineageTag: 0043f5a6-d7a1-46a6-b5b6-3799e0d4c644
 			column: 'Dia da Semana'

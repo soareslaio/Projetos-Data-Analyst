@@ -33,9 +33,12 @@ table dim_users
 				    Source = Excel.Workbook(File.Contents("C:\Users\laios\Documents\Data Analyst\users.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"user_id", Int64.Type}, {"category", type text}, {"city", type text}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"user_id", Int64.Type}, {"category", type text}, {"city", type text}}),
+				    pattern_bar_Bar = Table.ReplaceValue(#"Changed Type","bar","Bar",Replacer.ReplaceText,{"category"}),
+				    pattern_restaurant_Restaurant = Table.ReplaceValue(pattern_bar_Bar,"restaurant","Restaurant",Replacer.ReplaceText,{"category"}),
+				    pattern_shop_Shop = Table.ReplaceValue(pattern_restaurant_Restaurant,"shop","Shop",Replacer.ReplaceText,{"category"})
 				in
-				    #"Changed Type"
+				    pattern_shop_Shop
 
 	annotation PBI_NavigationStepName = Navigation
 
