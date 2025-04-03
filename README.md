@@ -4,6 +4,6 @@ Construir relatório em powerBI que mostre as minhas habilidades em transformar 
 
 # Tecnologias usadas no projeto
 
-PowerBI: Construção Dashboard Final
-DAX: Para Criar formulas performaticas e segurança a nivel de linha(rls)
-Python: Para aplicar o framework KDD e Analise Exploratória dos Dados(EDA)
+1. PowerBI: Construção Dashboard Final
+2. DAX: Para Criar formulas performaticas e segurança a nivel de linha(rls)
+3. Python: Para aplicar o framework KDD e Analise Exploratória dos Dados(EDA)
