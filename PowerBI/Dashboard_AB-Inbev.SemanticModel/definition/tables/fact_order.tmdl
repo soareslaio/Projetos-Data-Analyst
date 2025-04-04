@@ -1,7 +1,7 @@
 table fact_order
 	lineageTag: b1bdbf33-32d4-4850-b384-16d92c5b26cd
 
-	measure GMV = ```
+	measure GMVTotal = ```
 			SUM(fact_order[revenue])
 			
 			```
@@ -30,16 +30,6 @@ table fact_order
 		formatString: 0
 		displayFolder: Metricas Fact Order
 		lineageTag: 1e8f4285-ab27-474c-bcbd-8fd8f7d3e4f5
-
-	measure DistinctProducts =
-			
-			
-			VAR ProductsQuantity = DISTINCTCOUNT(fact_order[product_id])
-			
-			RETURN ProductsQuantity
-		formatString: 0
-		displayFolder: Metricas Fact Order
-		lineageTag: 4223eea6-8137-4af0-bed4-8404311a3671
 
 	measure AvgRevenue = ```
 			
@@ -79,7 +69,7 @@ table fact_order
 
 	measure MediaUsuariosDistintos =
 			
-			DIVIDE([GMV],[UsuariosDistintos],0)
+			DIVIDE([GMVTotal],[UsuariosDistintos],0)
 		displayFolder: Metricas Fact Order
 		lineageTag: d24860d3-2ac8-44c4-a0b2-7a636e83508f
 
@@ -100,6 +90,56 @@ table fact_order
 		lineageTag: a7c23406-7b00-41b5-8fc5-8b3e76048961
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure QuantidadeVendasProduto = ```
+			
+			
+			VAR VendasProduto = COUNT(fact_order[order_id]) 
+			
+			RETURN VendasProduto
+			```
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: aaccde07-f760-4ead-82c4-7d0cfe651e20
+
+	measure OrdersProductsDistinct =
+			
+			
+			VAR ProductsOrders = DISTINCTCOUNT(fact_order[product_id])
+			
+			RETURN ProductsOrders
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: 8d67592e-99be-4c29-b8cf-10c0e18c95a0
+
+	measure MediaProdutosDistintos =
+			
+			DIVIDE([GMVTotal],[OrdersProductsDistinct],0)
+		displayFolder: Metricas Fact Order
+		lineageTag: 776209f8-e865-4df8-bca6-f5b0e27516f1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MedianaProdutos = ```
+			
+			VAR TabelaProdutos = 
+			    SUMMARIZE(
+			        fact_order,
+			        fact_order[product_id],
+			        "VendasProdutos", SUM(fact_order[revenue]) 
+			    )
+			RETURN 
+			    MEDIANX(TabelaProdutos, [VendasProdutos])
+			```
+		displayFolder: Metricas Fact Order
+		lineageTag: 79093006-e402-4564-8fc8-89143272d77d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure MaximumGauge = 6000000
+		formatString: 0
+		displayFolder: Metricas Fact Order
+		lineageTag: bb50d730-2ad5-4487-9d81-df223ad4dbd1
 
 	column order_id
 		dataType: int64
