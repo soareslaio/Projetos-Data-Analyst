@@ -1,0 +1,39 @@
+table ConversaoUTM
+	lineageTag: 4a9bbc11-62ab-40da-9f17-7440d99274c6
+
+	column Canal
+		lineageTag: 8898a5e4-e9c7-4d44-b8a9-43bb73179e41
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Canal]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Conversoes
+		formatString: 0
+		lineageTag: 5a1dc25b-b2a9-4ed0-b076-7267cc98bb43
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Conversoes]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ConversaoUTM = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "Canal", STRING,
+				    "Conversoes", INTEGER,
+				    {
+				        {"Google Ads", 120},
+				        {"Instagram", 85},
+				        {"Email Marketing", 65},
+				        {"Orgânico", 40}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 242f5b3e20814929adfe2da19653dfa8
+

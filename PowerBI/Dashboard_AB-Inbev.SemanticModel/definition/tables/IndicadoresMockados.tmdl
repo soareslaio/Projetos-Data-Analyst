@@ -1,0 +1,35 @@
+table IndicadoresMockados
+	lineageTag: c248e716-bd94-4f65-8580-dd391288169c
+
+	measure CAC = "R$6,83"
+		lineageTag: 06b36b87-58e6-4605-add0-8e264edb2f08
+
+	measure ROI = "112%"
+		lineageTag: 88667fda-58d4-4f70-9d14-e848807672ae
+
+	measure LTV = "R$147,50"
+		lineageTag: b4aa1489-46b4-47cc-926a-bceda28a4db2
+
+	measure ChurnRate = "8,2%"
+		lineageTag: 7da096c6-941e-4d5b-8bc2-64be7c0991dc
+
+	measure SessoesEngajadas = "342"
+		lineageTag: 63c2fd29-5b75-42b9-b252-4ddaa48afe6b
+
+	measure TempoMedioEngajamento = "2min 37seg"
+		lineageTag: 2d1f6bc3-aeb6-45d0-b80f-22a02a2c8166
+
+	column Placeholder
+		lineageTag: 306ae045-4f89-4a73-9b6a-d40904fb8bed
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Placeholder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition IndicadoresMockados = calculated
+		mode: import
+		source = DATATABLE("Placeholder", STRING, {{"Tabela Para Dados Mocados"}})
+
+	annotation PBI_Id = 8d210c864d6444739f21398a90467b3f
+

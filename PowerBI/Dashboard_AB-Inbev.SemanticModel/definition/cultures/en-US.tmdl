@@ -3078,6 +3078,452 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "indicadores_mockado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "indicadores mockado": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "indicadore mockado": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "IndicadoresMockados": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.placeholder": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "Placeholder"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "placeholder": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.cac": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "CAC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cac": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.roi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "ROI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "roi": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.ltv": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "LTV"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ltv": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.churn_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "ChurnRate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "churn rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ChurnRate": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "churn degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "churn frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "churn percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "churn ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "churn quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "churn amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.sessoes_engajadas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "SessoesEngajadas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sessoes engajadas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SessoesEngajadas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "indicadores_mockado.tempo_medio_engajamento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "IndicadoresMockados",
+			          "ConceptualProperty": "TempoMedioEngajamento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tempo medio engajamento": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TempoMedioEngajamento": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "funil_compra": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FunilCompras"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "funil compra": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FunilCompras": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "funil_compra.etapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FunilCompras",
+			          "ConceptualProperty": "Etapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "etapa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "funil_compra.quantidade": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FunilCompras",
+			          "ConceptualProperty": "Quantidade"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "quantidade": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "conversao_UTM": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ConversaoUTM"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "conversao UTM": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ConversaoUTM": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "conversao_UTM.canal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ConversaoUTM",
+			          "ConceptualProperty": "Canal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "canal": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "waterway": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "seaway": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "channel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "vessel": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "duct": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "tube": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "passage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "conversao_UTM.conversoe": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "ConversaoUTM",
+			          "ConceptualProperty": "Conversoes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "conversoe": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -3428,6 +3874,369 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_users_have_fact_orders"
+			        }
+			      ]
+			    },
+			    "conversao_UTM_has_conversoe": {
+			      "Binding": {
+			        "ConceptualEntity": "ConversaoUTM"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "conversao_UTM": {
+			          "Target": {
+			            "Entity": "conversao_UTM"
+			          }
+			        },
+			        "conversao_UTM.conversoe": {
+			          "Target": {
+			            "Entity": "conversao_UTM.conversoe"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "conversao_UTM"
+			            },
+			            "Object": {
+			              "Role": "conversao_UTM.conversoe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "conversao_UTMs_have_conversoes"
+			        }
+			      ]
+			    },
+			    "conversao_UTM_has_canal": {
+			      "Binding": {
+			        "ConceptualEntity": "ConversaoUTM"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "conversao_UTM": {
+			          "Target": {
+			            "Entity": "conversao_UTM"
+			          }
+			        },
+			        "conversao_UTM.canal": {
+			          "Target": {
+			            "Entity": "conversao_UTM.canal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "conversao_UTM"
+			            },
+			            "Object": {
+			              "Role": "conversao_UTM.canal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "conversao_UTMs_have_canals"
+			        }
+			      ]
+			    },
+			    "funil_compra_has_quantidade": {
+			      "Binding": {
+			        "ConceptualEntity": "FunilCompras"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "funil_compra": {
+			          "Target": {
+			            "Entity": "funil_compra"
+			          }
+			        },
+			        "funil_compra.quantidade": {
+			          "Target": {
+			            "Entity": "funil_compra.quantidade"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "funil_compra"
+			            },
+			            "Object": {
+			              "Role": "funil_compra.quantidade"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "funil_compras_have_quantidades"
+			        }
+			      ]
+			    },
+			    "funil_compra_has_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "FunilCompras"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "funil_compra": {
+			          "Target": {
+			            "Entity": "funil_compra"
+			          }
+			        },
+			        "funil_compra.etapa": {
+			          "Target": {
+			            "Entity": "funil_compra.etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "funil_compra"
+			            },
+			            "Object": {
+			              "Role": "funil_compra.etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "funil_compras_have_etapas"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_tempo_medio_engajamento": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.tempo_medio_engajamento": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.tempo_medio_engajamento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.tempo_medio_engajamento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_tempo_medio_engajamento"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_sessoes_engajadas": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.sessoes_engajadas": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.sessoes_engajadas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.sessoes_engajadas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_sessoes_engajadas"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_churn_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.churn_rate": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.churn_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.churn_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_churn_rate"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_ltv": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.ltv": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.ltv"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.ltv"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_ltv"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_roi": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.roi": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.roi"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.roi"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_roi"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_cac": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.cac": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.cac"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.cac"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_cac"
+			        }
+			      ]
+			    },
+			    "indicadores_mockado_has_placeholder": {
+			      "Binding": {
+			        "ConceptualEntity": "IndicadoresMockados"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "indicadores_mockado": {
+			          "Target": {
+			            "Entity": "indicadores_mockado"
+			          }
+			        },
+			        "indicadores_mockado.placeholder": {
+			          "Target": {
+			            "Entity": "indicadores_mockado.placeholder"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "indicadores_mockado"
+			            },
+			            "Object": {
+			              "Role": "indicadores_mockado.placeholder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "indicadores_mockados_have_placeholders"
 			        }
 			      ]
 			    },

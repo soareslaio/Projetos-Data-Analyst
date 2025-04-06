@@ -19,7 +19,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 5
         },
         {
           "location": {
@@ -31,7 +31,7 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 6
         },
         {
           "location": {
@@ -44,7 +44,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 8
         },
         {
           "location": {
@@ -57,7 +57,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 3
         },
         {
           "location": {
@@ -70,12 +70,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 484.09438941789517,
-            "y": 511.63689627562781
+            "x": 732.30051726213151,
+            "y": 492.54411721068652
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "2110d08f-0248-4e11-8183-4c23b5fcee71",
@@ -83,7 +83,46 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1476.7713222424168,
+            "y": 200.35249584167218
+          },
+          "nodeIndex": "IndicadoresMockados",
+          "nodeLineageTag": "c248e716-bd94-4f65-8580-dd391288169c",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1468.2930281176632,
+            "y": 719.67608640807453
+          },
+          "nodeIndex": "FunilCompras",
+          "nodeLineageTag": "2670f2c1-dc7e-478d-bace-451ca9c94246",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1473.1796793383678,
+            "y": 467.65140275084997
+          },
+          "nodeIndex": "ConversaoUTM",
+          "nodeLineageTag": "4a9bbc11-62ab-40da-9f17-7440d99274c6",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
         }
       ],
       "name": "All tables",

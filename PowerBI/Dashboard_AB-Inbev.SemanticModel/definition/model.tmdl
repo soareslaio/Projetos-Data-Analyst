@@ -20,6 +20,9 @@ ref table dim_targets
 ref table dim_users
 ref table dim_rls
 ref table Calendario
+ref table IndicadoresMockados
+ref table FunilCompras
+ref table ConversaoUTM
 
 ref role Untitled
 

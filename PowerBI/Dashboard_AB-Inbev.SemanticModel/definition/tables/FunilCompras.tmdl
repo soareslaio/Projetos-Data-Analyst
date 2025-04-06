@@ -1,0 +1,39 @@
+table FunilCompras
+	lineageTag: 2670f2c1-dc7e-478d-bace-451ca9c94246
+
+	column Etapa
+		lineageTag: 4194bd72-2e49-4d84-89f1-3555e4e15a13
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Etapa]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantidade
+		formatString: 0
+		lineageTag: 70f60ecc-04ad-4d93-9435-7150d86bb797
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Quantidade]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FunilCompras = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE(
+				    "Etapa", STRING,
+				    "Quantidade", INTEGER,
+				    {
+				        {"Visitantes", 1000},
+				        {"Cadastros", 650},
+				        {"Carrinhos", 420},
+				        {"Compras", 270}
+				    }
+				)
+				
+				```
+
+	annotation PBI_Id = 8adeae4336e9406a8424c059107caea3
+
