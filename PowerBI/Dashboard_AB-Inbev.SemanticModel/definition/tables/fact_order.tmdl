@@ -34,9 +34,11 @@ table fact_order
 	measure AvgRevenue = ```
 			
 			
-			VAR AverageTicket = AVERAGE(fact_order[revenue])
+			VAR SumRevenueOrders = SUM(fact_order[revenue])
+			VAR OrdersDistinct = DISTINCTCOUNT(fact_order[order_id])
+			VAR AVGTicket = DIVIDE(SumRevenueOrders,OrdersDistinct)
 			
-			RETURN AverageTicket
+			RETURN AVGTicket
 			
 			```
 		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
@@ -45,12 +47,18 @@ table fact_order
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
-	measure MedianRevenue =
+	measure MedianaTicketMedio = ```
 			
+			VAR TabelaPedidos = 
+			    SUMMARIZE(
+			        fact_order,
+			        fact_order[order_id],
+			        "TotalPorPedido", SUM(fact_order[revenue])
+			    )
+			RETURN 
+			    MEDIANX(TabelaPedidos, [TotalPorPedido])
 			
-			VAR MedianTicket = MEDIAN(fact_order[revenue])
-			
-			RETURN MedianTicket
+			```
 		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Metricas Fact Order
 		lineageTag: 7e03caca-72fb-434a-91c1-13ce4522d294
@@ -70,10 +78,11 @@ table fact_order
 	measure MediaUsuariosDistintos =
 			
 			DIVIDE([GMVTotal],[UsuariosDistintos],0)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Metricas Fact Order
 		lineageTag: d24860d3-2ac8-44c4-a0b2-7a636e83508f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure MedianaUsuarios = ```
 			
@@ -86,10 +95,11 @@ table fact_order
 			RETURN 
 			    MEDIANX(TabelaUsuarios, [VendasUsuario])
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Metricas Fact Order
 		lineageTag: a7c23406-7b00-41b5-8fc5-8b3e76048961
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure QuantidadeVendasProduto = ```
 			
@@ -115,10 +125,11 @@ table fact_order
 	measure MediaProdutosDistintos =
 			
 			DIVIDE([GMVTotal],[OrdersProductsDistinct],0)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Metricas Fact Order
 		lineageTag: 776209f8-e865-4df8-bca6-f5b0e27516f1
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure MedianaProdutos = ```
 			
@@ -131,10 +142,11 @@ table fact_order
 			RETURN 
 			    MEDIANX(TabelaProdutos, [VendasProdutos])
 			```
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		displayFolder: Metricas Fact Order
 		lineageTag: 79093006-e402-4564-8fc8-89143272d77d
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure MaximumGauge = 6000000
 		formatString: 0

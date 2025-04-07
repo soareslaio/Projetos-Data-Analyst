@@ -1040,7 +1040,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "fact_order",
-			          "ConceptualProperty": "MedianRevenue"
+			          "ConceptualProperty": "MedianaTicketMedio"
 			        }
 			      },
 			      "State": "Generated",
