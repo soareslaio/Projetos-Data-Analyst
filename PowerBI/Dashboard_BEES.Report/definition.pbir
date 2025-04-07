@@ -2,7 +2,7 @@
   "version": "4.0",
   "datasetReference": {
     "byPath": {
-      "path": "../Dashboard_AB-Inbev.SemanticModel"
+      "path": "../Dashboard_BEES.SemanticModel"
     }
   }
 }

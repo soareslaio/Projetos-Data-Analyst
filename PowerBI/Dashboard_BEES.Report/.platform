@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "Report",
-    "displayName": "Dashboard_AB-Inbev"
+    "displayName": "Dashboard_BEES"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "20b4f9cf-cb9d-4e0f-993e-e5603776a7a0"
+    "logicalId": "f56754a5-9032-4966-b02e-3aca50a79e4a"
   }
 }
